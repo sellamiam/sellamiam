@@ -1,5 +1,5 @@
 # Mohamed Sellamia
-## AI-Powered Data Analyst
+## Data Analyst
 
 I am a Data Analyst specializing in building end-to-end data workflows, advanced SQL engineering, and Python pipeline development. My work bridges the gap between traditional data analysis and modern AI architectures, utilizing Large Language Models (LLMs), agentic data pipelines, and intelligent semantic classifiers to handle unstructured data at scale.
 
@@ -34,7 +34,7 @@ An automated time-series stock feed scanner and market analysis system deployed 
 * **Details**:
   * **Universe Scanner**: Developed a daily portfolio scanner parsing technical indicators and time-series records across a 1,000-stock universe on 4-hour historical logs.
   * **Intelligent Sentiment & Regime Analysis**: Integrated LLM analysis to classify financial sentiment and combined it with analytical models tracking VIX/SPY regimes for dynamic risk assessment.
-  * **Agentic Commander Daemon**: Employed a persistent systemd daemon (`telegram_commander.py`) behaving as an interactive agent that queries database metrics, runs on-demand portfolio diagnostics, and pushes real-time alert logs to Telegram.
+  * **Interactive Clawdbot Daemon**: Engineered Clawdbot, a persistent systemd service daemon (`telegram_commander.py`) deployed on a GCP instance. This interactive Telegram handler maps custom modules to execute queries on demand (`/pnl`, `/positions`, `/status`) for real-time portfolio monitoring.
   * **Strategy Verification**: Designed backtesting verification pipelines checking strategy yields against out-of-sample data splits to validate statistical significance.
 
 ### 2. EOS Energy Storage Career Tracker (Private)
