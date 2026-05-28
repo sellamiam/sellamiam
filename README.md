@@ -1,66 +1,66 @@
 # Mohamed Sellamia
-## Data Analyst
+## AI-Powered Data Analyst
 
-I am a Data Analyst with extensive experience in Python programming, advanced SQL, and data pipeline engineering. My expertise lies in building end-to-end data workflows, from automated collection and ETL pipeline development to database design, statistical analysis, and interactive visualizations. 
+I am a Data Analyst specializing in building end-to-end data workflows, advanced SQL engineering, and Python pipeline development. My work bridges the gap between traditional data analysis and modern AI architectures, utilizing Large Language Models (LLMs), agentic data pipelines, and intelligent semantic classifiers to handle unstructured data at scale.
 
-I specialize in translating raw data—including geospatial datasets, time-series market feeds, and unstructured web data—into clear, actionable analytical insights.
+I have years of experience developing automated ETL systems, executing complex relational database queries, and generating interactive data visualizations, complemented by deploying deterministic prompting systems and retrieval-augmented generation (RAG) concepts to unlock hidden insights in diverse datasets.
 
 ---
 
 ## Technical Ecosystem
 
-* **Languages**: SQL, Python, JavaScript (ES6+), HTML5, CSS3
+* **AI & LLM Integration**: LLM API Orchestration (Groq, Llama 3.1, OpenAI), Prompt Engineering, Semantic Classifiers, Agentic Workflows
 * **Data Analysis & Visualization**: Pandas, NumPy, GeoPandas, Matplotlib, Seaborn
-* **Database & ETL**: PostgreSQL, SQLite3, Prisma, Selenium WebDriver, Google Sheets API, REST APIs, JSON/XML parsing
+* **Database & ETL**: SQL (PostgreSQL, SQLite3), Prisma ORM, Selenium WebDriver, Google Sheets API, REST APIs, JSON/XML parsing
 * **Infrastructure & Automation**: Google Cloud Platform (GCP), Linux, Bash Scripting, Docker, Git
 
 ---
 
-## Analytical & Architectural Approach
+## Analytical & Architectural Approach: Agentic & Deterministic Design
 
-I build reliable data systems by separating logical workflows from processing engines. This ensures data pipelines are modular, scalable, and easy to maintain:
+To ensure predictable outputs when interfacing with probabilistic AI models, I design data systems using a structured three-layer pattern that isolates deterministic parsing from language model calls:
 
-1. **Schema & Directive Layer**: Clear definitions of database schemas, data dictionaries, and analytical goals documented in Markdown to map execution expectations and boundary edge cases.
-2. **ETL & Validation Layer**: Data parsing, cleaning, and sanity checking. All inbound data is validated against expectations to prevent garbage-in, garbage-out errors.
-3. **Execution & Analysis Layer**: Vectorized computations, statistical models, and visualization generators. Executions use optimized Python packages (Pandas, NumPy, GeoPandas) to handle heavy computations efficiently.
+1. **Directive Layer**: Standard Operating Procedures (SOPs) and prompt schemas written in Markdown. This defines the exact context window instructions, database schemas, and data dictionaries to guide the LLM's boundary limits.
+2. **Orchestration & Validation Layer**: Multi-agent routing engines that validate JSON payloads, manage semantic tokens, route processing pipelines, and dynamically recover from API rate limits or connectivity failures.
+3. **Execution & Analysis Layer**: Vectorized parsing, database transactions, and statistical generators in Python (Pandas, GeoPandas, SQLite). This layer handles raw compute deterministically, preventing compounding logic errors.
 
 ---
 
 ## Selected Analytical Projects
 
 ### 1. Quantitative Market Data Systems (Private)
-A market analysis system and data scanner deployed on Google Cloud Platform to evaluate time-series stock feeds and track trading trends.
-* **Stack**: Python, Alpaca API, Pandas, NumPy, Telegram Bot API, GCP
+An automated time-series stock feed scanner and market analysis system deployed on Google Cloud Platform.
+* **Stack**: Python, Alpaca API, Pandas, NumPy, Groq API, Telegram Bot API, GCP
 * **Details**:
-  * **Universe Scanner**: Developed a daily portfolio scanner checking and parsing key technical metrics across a 1,000-stock universe on 4-hour historical records.
-  * **Regime Analysis**: Implemented analytical models tracking VIX and SPY volatility metrics to identify changing market conditions and output regime classifications.
-  * **Monitoring & Alerts**: Built a persistent daemon (`telegram_commander.py`) to query the data engine, retrieve running PnL metrics, and push status alerts to Telegram.
-  * **Strategy Verification**: Designed backtesting validation frameworks checking performance metrics against historical data splits to verify statistical significance.
+  * **Universe Scanner**: Developed a daily portfolio scanner parsing technical indicators and time-series records across a 1,000-stock universe on 4-hour historical logs.
+  * **Intelligent Sentiment & Regime Analysis**: Integrated LLM analysis to classify financial sentiment and combined it with analytical models tracking VIX/SPY regimes for dynamic risk assessment.
+  * **Agentic Commander Daemon**: Employed a persistent systemd daemon (`telegram_commander.py`) behaving as an interactive agent that queries database metrics, runs on-demand portfolio diagnostics, and pushes real-time alert logs to Telegram.
+  * **Strategy Verification**: Designed backtesting verification pipelines checking strategy yields against out-of-sample data splits to validate statistical significance.
 
 ### 2. EOS Energy Storage Career Tracker (Private)
-An automated data collection pipeline and dashboard tracking job listings and recruitment velocity at EOS Energy Storage.
-* **Stack**: Python, Selenium WebDriver, SQLite3, Google Sheets API, Pandas, Matplotlib
+An automated data collection pipeline and database tracking recruitment velocity at EOS Energy Storage.
+* **Stack**: Python, Selenium WebDriver, SQLite3, LLM Parsing, Google Sheets API, Pandas
 * **Details**:
-  * **Automated Data Extraction**: Constructed a web scraper using Selenium and ChromeDriver to extract structured job posting datasets from dynamic web interfaces.
-  * **Relational Storage & Deduplication**: Designed local SQLite database tables with unique index constraints to prevent duplicate entries and maintain database integrity.
-  * **Cloud Sync Pipeline**: Built an ETL bridge using the Google Sheets API to clean and sync newly acquired records to cloud spreadsheets for reporting.
-  * **Hiring Analytics**: Generated data visualizations using Pandas and Matplotlib to analyze and graph monthly hiring trends and career category growth.
+  * **Automated Data Extraction**: Constructed an ETL crawler using Selenium and ChromeDriver to parse dynamic recruitment listings from job boards.
+  * **Intelligent Schema Classification**: Utilized zero-shot LLM parsing to transform unstructured text postings into structured JSON schemas, mapping skills, salaries, and levels.
+  * **Deduplication & Relational Storage**: Engineered local SQLite tables with unique index constraints to prevent duplicate entries and maintain database integrity.
+  * **Cloud Sync Pipeline**: Built an automated sync bridge via the Google Sheets API to upload cleaned, parsed data structures into cloud sheets.
 
 ### 3. SJVotes26: Election Analytics & GIS Mapping (Public)
-An analytical geospatial mapping and census data pipeline visualizing ward-level demographics and resident concerns for Saint John municipal elections.
-* **Stack**: Python, GeoPandas, Pandas, Matplotlib
+An analytical geospatial mapping and demographic pipeline mapping voter trends and resident concerns for Saint John municipal elections.
+* **Stack**: Python, GeoPandas, Pandas, Matplotlib, GIS Coordinates
 * **Details**:
-  * **Spatial Data Joins**: Leveraged GeoPandas to perform spatial intersections, joining census Forward Sortation Area (FSA) centroid coordinates with municipal electoral boundary files.
-  * **ETL Pipeline**: Ingested and normalized multi-format poll survey datasets to aggregate unstructured voter responses by geographic Ward.
-  * **Analytical Visualizations**: Produced stacked multi-variable matrices and 2x2 grid visualizations outlining Ward-specific participation demographics and priority issues.
+  * **Spatial Intersections**: Utilized GeoPandas to intersect Forward Sortation Area (FSA) centroid coordinate data with official municipal boundaries, eliminating hardcoded geographic maps.
+  * **Data Normalization ETL**: Ingested survey response datasets, using string analytics to clean, index, and organize unstructured voter concerns by Ward (1-4).
+  * **Visual Analytics**: Produced stacked multi-variable matrices and geographic grids outlining Ward-specific demographics and key city-wide issues.
 
 ### 4. Job Flag: Browser-Based Content Classification (Public)
-A browser-based utility that extracts and parses online job listing content to identify potentially fraudulent postings.
+A browser-based AI utility that parses on-page online job listing content to identify and flag potentially fraudulent listings.
 * **Stack**: Vanilla JavaScript, Chrome Extension V3 API, Groq Cloud API, Llama 3.1
 * **Details**:
-  * **Data Extraction**: Performs live DOM parsing on LinkedIn and Indeed pages to extract job description metrics, salary variables, and company names.
-  * **AI Analysis & Labeling**: Passes structured data through prompt parsing trees to classify and flag common fraud signals (e.g., wage anomalies, extreme descriptions).
-  * **Visual HUD**: Inserts analytical overlay badges containing a calculated legitimacy score (0–100%) and a categorized summary of detected risk criteria on user hover.
+  * **DOM Data Extraction**: Performs real-time DOM scanning on LinkedIn and Indeed pages to extract job description elements, salary scales, and company details.
+  * **AI Risk Labeling Agent**: Routes extracted text data through custom prompt trees to evaluate risk profiles (e.g. unrealistic wages, vague descriptions, pyramid scheme markers).
+  * **Interactive Overlay HUD**: Inserts responsive badges containing a calculated legitimacy score (0–100%) and a categorized markdown summary of detected warning signs on hover.
 
 ---
 
