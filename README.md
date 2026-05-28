@@ -1,84 +1,66 @@
 # Mohamed Sellamia
-## Quant Developer and Full-Stack Engineer
+## Data Analyst
 
-I build production-grade software applications focusing on quantitative systems, full-stack web platforms, data collection pipelines, and custom browser utilities. My work emphasizes robust software architecture, deterministic data processing, and reliable integration testing.
+I am a Data Analyst with extensive experience in Python programming, advanced SQL, and data pipeline engineering. My expertise lies in building end-to-end data workflows, from automated collection and ETL pipeline development to database design, statistical analysis, and interactive visualizations. 
+
+I specialize in translating raw data—including geospatial datasets, time-series market feeds, and unstructured web data—into clear, actionable analytical insights.
 
 ---
 
 ## Technical Ecosystem
 
-* **Languages**: Python, JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3
-* **Backend & Databases**: Node.js, Express, Prisma ORM, PostgreSQL, SQLite3, REST APIs
-* **Data & Quantitative**: Pandas, NumPy, GeoPandas, Matplotlib, yfinance, Vectorized Backtesting
-* **Automation & Scrape**: Selenium WebDriver, Google Sheets API, Gspread
-* **DevOps & Infrastructure**: Google Cloud Platform (GCP), Docker, Docker Compose, Linux, Bash Scripting, CI/CD
+* **Languages**: SQL, Python, JavaScript (ES6+), HTML5, CSS3
+* **Data Analysis & Visualization**: Pandas, NumPy, GeoPandas, Matplotlib, Seaborn
+* **Database & ETL**: PostgreSQL, SQLite3, Prisma, Selenium WebDriver, Google Sheets API, REST APIs, JSON/XML parsing
+* **Infrastructure & Automation**: Google Cloud Platform (GCP), Linux, Bash Scripting, Docker, Git
 
 ---
 
-## Architectural Approach: Separating Concerns for High-Reliability Systems
+## Analytical & Architectural Approach
 
-To build resilient services, I apply a strict three-layer architecture pattern to separate business intents from physical system execution:
+I build reliable data systems by separating logical workflows from processing engines. This ensures data pipelines are modular, scalable, and easy to maintain:
 
-1. **Directive Layer**: Natural-language standard operating procedures (SOPs) written in Markdown that document execution paths, structural expectations, inputs, outputs, and edge cases.
-2. **Orchestration Layer**: Coordination logic that parses directives, routes resources, validates system inputs/outputs, and handles API rate limits or connection failures.
-3. **Execution Layer**: Deterministic, highly optimized, and unit-tested Python or Node.js scripts. All database transactions, API calls, and file operations live here to ensure repeatable executions.
-
-This separation prevents compounding logic errors and isolates runtime issues, making services easier to debug and scale.
+1. **Schema & Directive Layer**: Clear definitions of database schemas, data dictionaries, and analytical goals documented in Markdown to map execution expectations and boundary edge cases.
+2. **ETL & Validation Layer**: Data parsing, cleaning, and sanity checking. All inbound data is validated against expectations to prevent garbage-in, garbage-out errors.
+3. **Execution & Analysis Layer**: Vectorized computations, statistical models, and visualization generators. Executions use optimized Python packages (Pandas, NumPy, GeoPandas) to handle heavy computations efficiently.
 
 ---
 
-## Selected Projects and Systems
+## Selected Analytical Projects
 
-### 1. Quantitative Trading Systems (Private)
-A quantitative scanner and automated execution engine deployed on Google Cloud Platform.
+### 1. Quantitative Market Data Systems (Private)
+A market analysis system and data scanner deployed on Google Cloud Platform to evaluate time-series stock feeds and track trading trends.
 * **Stack**: Python, Alpaca API, Pandas, NumPy, Telegram Bot API, GCP
 * **Details**:
-  * **Universe Scanner**: A portfolio scanner checking candidate trade signals across a 1,000-stock universe on 4-hour charts.
-  * **Market Regime Filters**: Incorporates logic checking VIX and SPY trends to dynamically adjust strategy allocations.
-  * **Portfolio Command Interface**: Deployed as a persistent systemd daemon (`telegram_commander.py`) to manage active positions, retrieve PnL, and monitor status queries directly via Telegram.
-  * **Strategy Verification**: Built using parameter configurations validated against walk-forward out-of-sample data splits with robust take-profit and stop-loss logic.
+  * **Universe Scanner**: Developed a daily portfolio scanner checking and parsing key technical metrics across a 1,000-stock universe on 4-hour historical records.
+  * **Regime Analysis**: Implemented analytical models tracking VIX and SPY volatility metrics to identify changing market conditions and output regime classifications.
+  * **Monitoring & Alerts**: Built a persistent daemon (`telegram_commander.py`) to query the data engine, retrieve running PnL metrics, and push status alerts to Telegram.
+  * **Strategy Verification**: Designed backtesting validation frameworks checking performance metrics against historical data splits to verify statistical significance.
 
-### 2. CampConnect: Full-Stack Activity Marketplace (Private)
-A full-stack marketplace web application connecting families with summer camps, tutors, and coaches.
-* **Stack**: Node.js, Express, Prisma ORM, PostgreSQL, Stripe API, Docker, JWT
-* **Details**:
-  * **Role-Based Access & Security**: Parents, providers, and administrator portals secured with JSON Web Tokens (JWT) using refresh token rotations and Bcrypt password hashing.
-  * **Transaction Engine**: Stripe API integration handling checkout workflows for one-time bookings and recurring monthly provider subscriptions, backed by asynchronous Stripe webhook listeners.
-  * **Environment Containerization**: Containerized with Docker and Docker Compose for predictable development environments and local testing, deployed via automated shell-based pipelines.
-  * **Interactive Search Boards**: Features interactive activity boards allowing users to filter, organize, and catalog bookings.
-
-### 3. EOS Energy Storage Career Tracker (Private)
-An automated web scraper and data processing pipeline tracking recruitment listings and hiring trends at EOS Energy Storage.
+### 2. EOS Energy Storage Career Tracker (Private)
+An automated data collection pipeline and dashboard tracking job listings and recruitment velocity at EOS Energy Storage.
 * **Stack**: Python, Selenium WebDriver, SQLite3, Google Sheets API, Pandas, Matplotlib
 * **Details**:
-  * **Automated Data Extraction**: Employs Selenium WebDriver with ChromeDriver to query and crawl job boards.
-  * **Deduplication Engine**: Uses local SQLite storage with unique constraint schemas to prevent duplicate record logging.
-  * **Cloud Synchronization**: Appends newly scraped listings to a Google Sheets document via the Google Sheets API for shared tracking.
-  * **Trend Visualization**: Includes an analytics engine using Pandas and Matplotlib to parse historical records and graph hiring velocity trends.
+  * **Automated Data Extraction**: Constructed a web scraper using Selenium and ChromeDriver to extract structured job posting datasets from dynamic web interfaces.
+  * **Relational Storage & Deduplication**: Designed local SQLite database tables with unique index constraints to prevent duplicate entries and maintain database integrity.
+  * **Cloud Sync Pipeline**: Built an ETL bridge using the Google Sheets API to clean and sync newly acquired records to cloud spreadsheets for reporting.
+  * **Hiring Analytics**: Generated data visualizations using Pandas and Matplotlib to analyze and graph monthly hiring trends and career category growth.
 
-### 4. Job Flag: Browser-Based Content Verification (Public)
-A Chrome browser extension designed to identify and flag potentially fraudulent online job postings.
-* **Stack**: Vanilla JavaScript, Chrome Extension V3 API, Groq Cloud API, Llama 3.1
-* **Details**:
-  * **On-Page Parsing**: Runs real-time DOM analysis on active LinkedIn and Indeed listings, sending parsed job details to a background prompt processing thread.
-  * **Heuristics Processing**: Checks listings for standard warning signs including extreme salary discrepancies, vague descriptions, and pyramid-style language.
-  * **User HUD**: Embeds legitimacy badges directly into the browser DOM interface, displaying granular risk scores and categorized summaries of detected anomalies on hover.
-
-### 5. BCE.TO Vectorized Backtesting Suite (Private)
-A vectorized parameter optimizer and backtesting tool for equities listed on the Toronto Stock Exchange.
-* **Stack**: Python, Pandas, NumPy, yfinance, Monte Carlo Simulation
-* **Details**:
-  * **Vectorized Computations**: Replaced legacy spreadsheets with vectorized Pandas code, producing significant performance gains and discovering optimized entry/exit parameters.
-  * **Overfitting Prevention**: Utilizes walk-forward analysis splits to validate parameter configurations against unseen historical data periods.
-  * **Risk Assessment**: Generates Monte Carlo simulations (1,000 runs) to track strategy yield variance and identify worst-case drawdown boundaries.
-
-### 6. SJVotes26: Election Analytics & GIS Mapping (Public)
-An analytical mapping pipeline visualizing demographics and participation trends for Saint John municipal elections.
+### 3. SJVotes26: Election Analytics & GIS Mapping (Public)
+An analytical geospatial mapping and census data pipeline visualizing ward-level demographics and resident concerns for Saint John municipal elections.
 * **Stack**: Python, GeoPandas, Pandas, Matplotlib
 * **Details**:
-  * **Geospatial Joins**: Employs GeoPandas to intersect census Forward Sortation Area (FSA) centroid coordinates with municipal electoral boundaries, mapping survey data without hardcoded boundaries.
-  * **Data Pipeline**: Ingests unstructured survey responses to output structured regional demographics.
-  * **Visualizations**: Produces multi-variable matrices showing city-wide resident concerns and age participation ratios.
+  * **Spatial Data Joins**: Leveraged GeoPandas to perform spatial intersections, joining census Forward Sortation Area (FSA) centroid coordinates with municipal electoral boundary files.
+  * **ETL Pipeline**: Ingested and normalized multi-format poll survey datasets to aggregate unstructured voter responses by geographic Ward.
+  * **Analytical Visualizations**: Produced stacked multi-variable matrices and 2x2 grid visualizations outlining Ward-specific participation demographics and priority issues.
+
+### 4. Job Flag: Browser-Based Content Classification (Public)
+A browser-based utility that extracts and parses online job listing content to identify potentially fraudulent postings.
+* **Stack**: Vanilla JavaScript, Chrome Extension V3 API, Groq Cloud API, Llama 3.1
+* **Details**:
+  * **Data Extraction**: Performs live DOM parsing on LinkedIn and Indeed pages to extract job description metrics, salary variables, and company names.
+  * **AI Analysis & Labeling**: Passes structured data through prompt parsing trees to classify and flag common fraud signals (e.g., wage anomalies, extreme descriptions).
+  * **Visual HUD**: Inserts analytical overlay badges containing a calculated legitimacy score (0–100%) and a categorized summary of detected risk criteria on user hover.
 
 ---
 
