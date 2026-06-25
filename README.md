@@ -1,4 +1,4 @@
-# Mohamed Sellamia
+# Mohamed Sellamia, MBA
 ## Data Analyst
 
 I am a Data Analyst specializing in building end-to-end data workflows, advanced SQL engineering, and Python pipeline development. My work bridges the gap between traditional data analysis and modern AI architectures, utilizing Large Language Models (LLMs), agentic data pipelines, and intelligent semantic classifiers to handle unstructured data at scale.
