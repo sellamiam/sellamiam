@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civic Tech Saint John - Interactive System Mockup</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif; }
+  </style>
+</head>
+<body class="bg-transparent text-[var(--foreground)] antialiased p-0 m-0">
+  <div class="max-w-5xl mx-auto py-2 space-y-4">
+
+    <!-- Top Navigation Bar / View Selector -->
+    <div class="flex flex-wrap items-center justify-between gap-3 p-2 bg-[var(--card)] border border-[var(--card-border)] rounded-2xl shadow-xs">
+      <div class="flex items-center gap-2 pl-2">
+        <svg class="h-6 w-6 text-[#0071E3]" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M 40 16 A 32 32 0 1 0 60 16" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" />
+          <line x1="50" y1="8" x2="50" y2="40" stroke="currentColor" stroke-width="9" stroke-linecap="round" />
+        </svg>
+        <span class="font-semibold text-xs tracking-wide">CIVIC TECH SAINT JOHN</span>
+        <span class="text-[10px] text-[var(--muted-foreground)] bg-[var(--card-border)] px-1.5 py-0.5 rounded">Interactive Mockup</span>
+      </div>
+
+      <div class="flex items-center gap-1 bg-[var(--background)] p-1 rounded-xl text-xs font-medium">
+        <button onclick="switchTab('desktop')" id="tab-desktop" class="px-3 py-1.5 rounded-lg bg-[var(--card)] shadow-xs font-semibold text-[var(--foreground)] transition">
+          💻 Desktop Form
+        </button>
+        <button onclick="switchTab('mobile')" id="tab-mobile" class="px-3 py-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+          📱 Mobile Form
+        </button>
+        <button onclick="switchTab('volunteers')" id="tab-volunteers" class="px-3 py-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+          👥 Volunteer Database
+        </button>
+        <button onclick="switchTab('projects')" id="tab-projects" class="px-3 py-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+          📁 Projects & Sync
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW 1: DESKTOP INTAKE FORM (SUBMIT AT BOTTOM) -->
+    <div id="view-desktop" class="block transition-all">
+      <div class="bg-[#F5F5F7] text-[#1D1D1F] p-6 sm:p-8 rounded-3xl border border-[#E5E5EA] shadow-sm">
+        
+        <!-- Header with Logo -->
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-2 mb-2">
+            <svg class="h-8 text-[#1D1D1F]" viewBox="0 0 540 100" fill="currentColor">
+              <g transform="translate(10, 10)">
+                <path d="M 40 12 A 32 32 0 1 0 56 12" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+                <line x1="48" y1="4" x2="48" y2="36" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+              </g>
+              <text x="110" y="46" font-size="28" font-weight="600" letter-spacing="1.5">CIVIC TECH SAINT JOHN</text>
+              <text x="112" y="74" font-size="18" font-weight="600" letter-spacing="0.5">Technology + Social Good</text>
+            </svg>
+          </div>
+          <p class="text-xs text-[#86868B]">Volunteer & Community Intake Roster • Greater Saint John</p>
+        </div>
+
+        <!-- Main Desktop 2-Column Form Card -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E5EA] shadow-sm max-w-4xl mx-auto space-y-6">
+          
+          <!-- Top alert banner for existing user -->
+          <div class="p-3.5 bg-[#FBFBFD] border border-[#0071E3]/25 rounded-2xl flex items-center gap-3 text-xs">
+            <span class="text-[#0071E3] font-bold text-sm">ℹ</span>
+            <span class="text-[#1D1D1F]">
+              <strong class="font-medium">Returning Member?</strong> Entering your email automatically loads your existing skills and availability for fast editing.
+            </span>
+          </div>
+
+          <!-- 2 Columns Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- LEFT COLUMN: Contact & Profile -->
+            <div class="space-y-4">
+              <h3 class="text-xs font-semibold uppercase tracking-wider text-[#86868B]">Personal Details</h3>
+              
+              <div>
+                <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Email Address <span class="text-[#0071E3]">*</span></label>
+                <input type="email" value="alex.chen@example.com" class="w-full px-3.5 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0071E3]/20" />
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-medium text-[#1D1D1F] mb-1">First Name <span class="text-[#0071E3]">*</span></label>
+                  <input type="text" value="Alex" class="w-full px-3.5 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Last Name <span class="text-[#0071E3]">*</span></label>
+                  <input type="text" value="Chen" class="w-full px-3.5 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Phone Number <span class="text-xs text-[#86868B] font-normal">(Optional)</span></label>
+                <input type="tel" value="506-555-0192" class="w-full px-3.5 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Role <span class="text-xs text-[#86868B] font-normal">(Optional)</span></label>
+                  <select class="w-full px-3.5 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]">
+                    <option selected>Volunteer</option>
+                    <option>Advocate</option>
+                    <option>Ambassador</option>
+                    <option>Project Lead</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-[#1D1D1F] mb-1">City <span class="text-xs text-[#86868B] font-normal">(Optional)</span></label>
+                  <select class="w-full px-3.5 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]">
+                    <option selected>Saint John, NB</option>
+                    <option>Rothesay, NB</option>
+                    <option>Quispamsis, NB</option>
+                    <option>Grand Bay-Westfield, NB</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Skills & Availability -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xs font-semibold uppercase tracking-wider text-[#86868B]">Skills & Experience</h3>
+                <span class="text-[11px] text-[#0071E3] hover:underline cursor-pointer">Paste bio to extract</span>
+              </div>
+
+              <!-- Selected Skill Chips with X -->
+              <div id="desktop-skills-container" class="flex flex-wrap gap-1.5 p-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-2xl min-h-[42px]">
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E5E5EA] text-[#1D1D1F] text-xs font-medium rounded-full shadow-2xs">
+                  React <button type="button" onclick="this.parentElement.remove()" class="text-[#86868B] hover:text-[#1D1D1F] ml-0.5">✕</button>
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E5E5EA] text-[#1D1D1F] text-xs font-medium rounded-full shadow-2xs">
+                  Python <button type="button" onclick="this.parentElement.remove()" class="text-[#86868B] hover:text-[#1D1D1F] ml-0.5">✕</button>
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E5E5EA] text-[#1D1D1F] text-xs font-medium rounded-full shadow-2xs">
+                  GIS Mapping <button type="button" onclick="this.parentElement.remove()" class="text-[#86868B] hover:text-[#1D1D1F] ml-0.5">✕</button>
+                </span>
+              </div>
+
+              <!-- Autocomplete Input -->
+              <div class="relative">
+                <input type="text" placeholder="Type to search skills (e.g. UI/UX, Public Speaking, SQL)..." class="w-full px-3.5 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+              </div>
+
+              <!-- Availability -->
+              <div>
+                <h3 class="text-xs font-semibold uppercase tracking-wider text-[#86868B] mb-2">Availability</h3>
+                <div class="flex flex-wrap gap-1 mb-2">
+                  <span class="px-2.5 py-1 text-xs rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Mon</span>
+                  <span class="px-2.5 py-1 text-xs rounded-lg bg-[#1D1D1F] text-white font-medium">Tue</span>
+                  <span class="px-2.5 py-1 text-xs rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Wed</span>
+                  <span class="px-2.5 py-1 text-xs rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Thu</span>
+                  <span class="px-2.5 py-1 text-xs rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Fri</span>
+                  <span class="px-2.5 py-1 text-xs rounded-lg bg-[#1D1D1F] text-white font-medium">Sat</span>
+                  <span class="px-2.5 py-1 text-xs rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Sun</span>
+                </div>
+                <div class="flex gap-2 text-xs">
+                  <span class="px-2.5 py-1 rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Morning</span>
+                  <span class="px-2.5 py-1 rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Afternoon</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-[#0071E3] text-white font-medium">Evening (Hack Night)</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <hr class="border-[#F2F2F7]" />
+
+          <!-- BOTTOM SECTION: Consent & Full-Width Submit Button -->
+          <div class="pt-2 space-y-4">
+            <div class="space-y-2 text-xs text-[#86868B]">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-[#0071E3]" />
+                <span>I agree to the <strong class="text-[#1D1D1F] underline">Volunteer Terms & Community Guidelines</strong> *</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-[#0071E3]" />
+                <span>I expressly consent to receive emails regarding meetup agendas and volunteer calls (CASL compliant, 1-click unsubscribe anytime).</span>
+              </label>
+            </div>
+
+            <!-- SUBMIT BUTTON ANCHORED AT THE BOTTOM -->
+            <div class="pt-3">
+              <button type="button" class="w-full py-3.5 px-6 bg-[#0071E3] hover:bg-[#0077ED] text-white text-sm font-semibold rounded-2xl shadow-sm transition active:scale-[0.99] flex items-center justify-center gap-2">
+                <span>Submit Profile</span>
+                <span class="text-xs opacity-80">→</span>
+              </button>
+              <p class="text-center text-[11px] text-[#86868B] mt-2">
+                🔒 Your personal data is protected under PIPEDA and never shared with commercial entities.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 2: MOBILE INTAKE FORM (SUBMIT AT BOTTOM) -->
+    <div id="view-mobile" class="hidden transition-all">
+      <div class="flex justify-center p-4">
+        <!-- iPhone Frame -->
+        <div class="w-[380px] bg-white text-[#1D1D1F] rounded-[44px] border-[10px] border-[#1D1D1F] shadow-2xl overflow-hidden p-6 space-y-5">
+          
+          <!-- Dynamic Island / Speaker notch -->
+          <div class="w-24 h-4 bg-[#1D1D1F] rounded-full mx-auto mb-2"></div>
+
+          <!-- Mobile Header with CTSJ Logo -->
+          <div class="text-center space-y-1">
+            <svg class="h-6 mx-auto text-[#1D1D1F]" viewBox="0 0 540 100" fill="currentColor">
+              <g transform="translate(10, 10)">
+                <path d="M 40 12 A 32 32 0 1 0 56 12" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+                <line x1="48" y1="4" x2="48" y2="36" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+              </g>
+              <text x="110" y="46" font-size="28" font-weight="600" letter-spacing="1.5">CIVIC TECH SAINT JOHN</text>
+              <text x="112" y="74" font-size="18" font-weight="600" letter-spacing="0.5">Technology + Social Good</text>
+            </svg>
+            <h2 class="text-base font-semibold tracking-tight text-[#1D1D1F]">Volunteer Intake</h2>
+            <p class="text-[11px] text-[#86868B]">Weekly Tuesday Hack Nights</p>
+          </div>
+
+          <!-- Mobile Form Fields -->
+          <div class="space-y-3 text-xs">
+            <div>
+              <label class="block font-medium mb-1">Email <span class="text-[#0071E3]">*</span></label>
+              <input type="email" value="jane.doe@example.com" class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block font-medium mb-1">First Name <span class="text-[#0071E3]">*</span></label>
+                <input type="text" value="Jane" class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs" />
+              </div>
+              <div>
+                <label class="block font-medium mb-1">Last Name <span class="text-[#0071E3]">*</span></label>
+                <input type="text" value="Doe" class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-medium mb-1">City <span class="text-[#86868B] font-normal">(Optional)</span></label>
+              <select class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs">
+                <option>Saint John, NB</option>
+                <option>Rothesay, NB</option>
+                <option>Quispamsis, NB</option>
+              </select>
+            </div>
+
+            <!-- Skills with X buttons -->
+            <div>
+              <label class="block font-medium mb-1">Skills <span class="text-[#86868B] font-normal">(Optional)</span></label>
+              <div class="flex flex-wrap gap-1 p-1.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl mb-1.5">
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-[#E5E5EA] text-[11px] rounded-full">
+                  Python <button type="button" class="text-[#86868B]">✕</button>
+                </span>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-[#E5E5EA] text-[11px] rounded-full">
+                  UI/UX <button type="button" class="text-[#86868B]">✕</button>
+                </span>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-[#E5E5EA] text-[11px] rounded-full">
+                  GIS <button type="button" class="text-[#86868B]">✕</button>
+                </span>
+              </div>
+              <input type="text" placeholder="Add another skill..." class="w-full px-3 py-1.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs" />
+            </div>
+
+            <!-- Availability Toggles -->
+            <div>
+              <label class="block font-medium mb-1">Availability</label>
+              <div class="flex justify-between gap-1 text-[11px]">
+                <span class="px-2 py-1 rounded bg-[#1D1D1F] text-white">Tue</span>
+                <span class="px-2 py-1 rounded border border-[#E5E5EA] text-[#86868B]">Thu</span>
+                <span class="px-2 py-1 rounded bg-[#1D1D1F] text-white">Sat</span>
+                <span class="px-2 py-1 rounded bg-[#0071E3] text-white">Evening</span>
+              </div>
+            </div>
+
+            <!-- Consent -->
+            <div class="pt-1 space-y-1 text-[11px] text-[#86868B]">
+              <label class="flex items-center gap-2">
+                <input type="checkbox" checked class="rounded text-[#0071E3]" />
+                <span>Agree to Volunteer Terms *</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="checkbox" checked class="rounded text-[#0071E3]" />
+                <span>CASL Email Opt-in (Project calls)</span>
+              </label>
+            </div>
+
+            <!-- ANCHORED MOBILE SUBMIT BUTTON AT BOTTOM -->
+            <div class="pt-2">
+              <button type="button" class="w-full py-3 bg-[#0071E3] text-white text-xs font-semibold rounded-xl shadow-sm">
+                Submit Profile
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 3: VOLUNTEER DATABASE CONSOLE (ROSTER TALENT POOL) -->
+    <div id="view-volunteers" class="hidden transition-all">
+      <div class="bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-5 shadow-xs space-y-4">
+        
+        <!-- Header & Action Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[var(--card-border)]">
+          <div>
+            <h2 class="text-base font-semibold flex items-center gap-2">
+              <span>👥</span> CTSJ Volunteer Talent Database
+            </h2>
+            <p class="text-xs text-[var(--muted-foreground)]">48 Active Registered Community Volunteers • Firestore OLTP Protected</p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1.5 bg-[var(--background)] border border-[#0071E3] rounded-lg px-2.5 py-1">
+              <span class="text-xs text-[var(--muted-foreground)]">🔍</span>
+              <input type="text" value="React, GIS" placeholder="Search name or paste text..." class="text-xs bg-transparent text-[var(--foreground)] w-36 focus:outline-none" />
+              <button class="px-2 py-0.5 text-[10px] bg-[#EBF5FF] text-[#0071E3] font-semibold rounded border border-[#B9E0FF]">✨ Extract Skills</button>
+            </div>
+            <button class="px-3 py-1.5 text-xs bg-[#0071E3] text-white font-medium rounded-lg hover:bg-[#0077ED] transition">
+              ✉️ Export Mailing List (CASL)
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="text-[var(--muted-foreground)] font-medium">Filter by:</span>
+          <span class="px-2 py-0.5 bg-[#0071E3]/10 text-[#0071E3] rounded-md font-medium cursor-pointer">All Skills ▾</span>
+          <span class="px-2 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded-md cursor-pointer">City: Saint John ▾</span>
+          <span class="px-2 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded-md cursor-pointer">Availability: Tuesday Evening ▾</span>
+          <span class="ml-auto text-[11px] text-[var(--muted-foreground)]">Showing 5 of 48 volunteers</span>
+        </div>
+
+        <!-- Volunteers Table -->
+        <div class="overflow-x-auto rounded-xl border border-[var(--card-border)]">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-[var(--background)] text-[var(--muted-foreground)] uppercase text-[10px] tracking-wider border-b border-[var(--card-border)]">
+              <tr>
+                <th class="py-2.5 px-3">Volunteer</th>
+                <th class="py-2.5 px-3">City / Role</th>
+                <th class="py-2.5 px-3">Skills (Tags)</th>
+                <th class="py-2.5 px-3">Availability</th>
+                <th class="py-2.5 px-3">CASL Consent</th>
+                <th class="py-2.5 px-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--card-border)]">
+              <tr class="hover:bg-[var(--background)]/50 transition">
+                <td class="py-2.5 px-3 font-medium">
+                  <div class="text-[var(--foreground)]">Alex Chen</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">alex.chen@example.com</div>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div>Saint John, NB</div>
+                  <span class="text-[10px] text-[#0071E3] font-medium">Project Lead</span>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span class="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-[10px]">React</span>
+                    <span class="px-1.5 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-[10px]">GIS Mapping</span>
+                    <span class="px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded text-[10px]">UI/UX</span>
+                  </div>
+                </td>
+                <td class="py-2.5 px-3 text-[var(--muted-foreground)]">Tue Eve, Sat Aft</td>
+                <td class="py-2.5 px-3"><span class="text-emerald-600 font-semibold">✓ Express</span></td>
+                <td class="py-2.5 px-3 text-right"><button class="text-[#0071E3] hover:underline">Assign Project</button></td>
+              </tr>
+
+              <tr class="hover:bg-[var(--background)]/50 transition">
+                <td class="py-2.5 px-3 font-medium">
+                  <div class="text-[var(--foreground)]">Jane Doe</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">jane.doe@example.com</div>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div>Saint John, NB</div>
+                  <span class="text-[10px] text-slate-600 dark:text-slate-400 font-medium">Volunteer</span>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span class="px-1.5 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-[10px]">Python</span>
+                    <span class="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-[10px]">React</span>
+                    <span class="px-1.5 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-[10px]">Data Cleaning</span>
+                  </div>
+                </td>
+                <td class="py-2.5 px-3 text-[var(--muted-foreground)]">Tue Eve (Hack Night)</td>
+                <td class="py-2.5 px-3"><span class="text-emerald-600 font-semibold">✓ Express</span></td>
+                <td class="py-2.5 px-3 text-right"><button class="text-[#0071E3] hover:underline">Assign Project</button></td>
+              </tr>
+
+              <tr class="hover:bg-[var(--background)]/50 transition">
+                <td class="py-2.5 px-3 font-medium">
+                  <div class="text-[var(--foreground)]">Marcus Bell</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">marcus.bell@example.com</div>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div>Rothesay, NB</div>
+                  <span class="text-[10px] text-amber-600 font-medium">Advocate</span>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span class="px-1.5 py-0.5 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 rounded text-[10px]">Facilitation</span>
+                    <span class="px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded text-[10px]">Canva</span>
+                    <span class="px-1.5 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-[10px]">Policy</span>
+                  </div>
+                </td>
+                <td class="py-2.5 px-3 text-[var(--muted-foreground)]">Thu Eve, Sat Morn</td>
+                <td class="py-2.5 px-3"><span class="text-emerald-600 font-semibold">✓ Express</span></td>
+                <td class="py-2.5 px-3 text-right"><button class="text-[#0071E3] hover:underline">Assign Project</button></td>
+              </tr>
+
+              <tr class="hover:bg-[var(--background)]/50 transition">
+                <td class="py-2.5 px-3 font-medium">
+                  <div class="text-[var(--foreground)]">Sarah Taylor</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">sarah.taylor@example.com</div>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div>Quispamsis, NB</div>
+                  <span class="text-[10px] text-emerald-600 font-medium">Ambassador</span>
+                </td>
+                <td class="py-2.5 px-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span class="px-1.5 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-[10px]">Python</span>
+                    <span class="px-1.5 py-0.5 bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded text-[10px]">GTFS Transit</span>
+                    <span class="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-[10px]">Docker</span>
+                  </div>
+                </td>
+                <td class="py-2.5 px-3 text-[var(--muted-foreground)]">Tue Eve, Sun Aft</td>
+                <td class="py-2.5 px-3"><span class="text-emerald-600 font-semibold">✓ Express</span></td>
+                <td class="py-2.5 px-3 text-right"><button class="text-[#0071E3] hover:underline">Assign Project</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIEW 4: PROJECTS DATABASE & GOOGLE SHEETS SYNC HUB -->
+    <div id="view-projects" class="hidden transition-all">
+      <div class="bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-5 shadow-xs space-y-4">
+        
+        <!-- Live Sync Status Banner -->
+        <div class="p-3 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-xl flex items-center justify-between text-xs text-emerald-800 dark:text-emerald-200">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="font-medium">Google Sheets Bi-Directional Webhook Sync: ACTIVE</span>
+            <span class="text-[var(--muted-foreground)] text-[10px]">(Sheet: "CTSJ Active Projects")</span>
+          </div>
+          <span class="text-[10px] bg-emerald-100 dark:bg-emerald-900/50 px-2 py-0.5 rounded font-mono">Last Synced: 2m ago</span>
+        </div>
+
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-2">
+          <div>
+            <h2 class="text-base font-semibold">📁 Community Projects Registry</h2>
+            <p class="text-xs text-[var(--muted-foreground)]">Project Leads update Google Sheets → Automatically reflects in Firestore DB</p>
+          </div>
+          <button class="px-3 py-1.5 text-xs bg-[var(--background)] border border-[var(--card-border)] rounded-lg font-medium hover:bg-[var(--card)]">
+            Open in Google Sheets ↗
+          </button>
+        </div>
+
+        <!-- Projects Table -->
+        <div class="overflow-x-auto rounded-xl border border-[var(--card-border)]">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-[var(--background)] text-[var(--muted-foreground)] uppercase text-[10px] tracking-wider border-b border-[var(--card-border)]">
+              <tr>
+                <th class="py-2.5 px-3">Project ID</th>
+                <th class="py-2.5 px-3">Initiative Name</th>
+                <th class="py-2.5 px-3">Status</th>
+                <th class="py-2.5 px-3">Project Lead</th>
+                <th class="py-2.5 px-3">Needed Skills</th>
+                <th class="py-2.5 px-3">Channel / Repo</th>
+                <th class="py-2.5 px-3 text-right">Sync Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--card-border)]">
+              <tr class="hover:bg-[var(--background)]/50 transition">
+                <td class="py-3 px-3 font-mono text-[11px] text-[#0071E3] font-semibold">PRJ-001</td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-[var(--foreground)]">Affordable Housing Directory</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">Interactive map of non-profit housing in Saint John</div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 rounded-full font-semibold text-[10px]">Active</span>
+                </td>
+                <td class="py-3 px-3">Alex Chen</td>
+                <td class="py-3 px-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">React</span>
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">GIS</span>
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">UI/UX</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3 text-[var(--muted-foreground)]">
+                  <div>#housing-map</div>
+                  <div class="text-[10px] text-[#0071E3]">github.com/ctsj/housing</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono text-[10px] text-emerald-600">✓ 19:15:22</td>
+              </tr>
+
+              <tr class="hover:bg-[var(--background)]/50 transition">
+                <td class="py-3 px-3 font-mono text-[11px] text-[#0071E3] font-semibold">PRJ-002</td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-[var(--foreground)]">Saint John Transit Route Bot</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">Real-time SMS alerts for Saint John Transit delays</div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full font-semibold text-[10px]">Ideation</span>
+                </td>
+                <td class="py-3 px-3">Sarah Taylor</td>
+                <td class="py-3 px-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">Python</span>
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">GTFS</span>
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">Twilio</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3 text-[var(--muted-foreground)]">
+                  <div>#transit-bot</div>
+                  <div class="text-[10px] text-[#0071E3]">github.com/ctsj/transit</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono text-[10px] text-emerald-600">✓ 18:40:11</td>
+              </tr>
+
+              <tr class="hover:bg-[var(--background)]/50 transition">
+                <td class="py-3 px-3 font-mono text-[11px] text-[#0071E3] font-semibold">PRJ-003</td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-[var(--foreground)]">Seniors Digital Literacy Toolkit</div>
+                  <div class="text-[10px] text-[var(--muted-foreground)]">Community workshops bridging digital divide for seniors</div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 rounded-full font-semibold text-[10px]">Planning</span>
+                </td>
+                <td class="py-3 px-3">Marcus Bell</td>
+                <td class="py-3 px-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">Facilitation</span>
+                    <span class="px-1.5 py-0.5 bg-[var(--background)] border border-[var(--card-border)] rounded text-[10px]">Canva</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3 text-[var(--muted-foreground)]">
+                  <div>#digital-literacy</div>
+                  <div class="text-[10px]">Google Drive Deck</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono text-[10px] text-emerald-600">✓ 17:02:45</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      // Hide all views
+      document.getElementById('view-desktop').classList.add('hidden');
+      document.getElementById('view-mobile').classList.add('hidden');
+      document.getElementById('view-volunteers').classList.add('hidden');
+      document.getElementById('view-projects').classList.add('hidden');
+
+      // Reset button styles
+      const tabs = ['desktop', 'mobile', 'volunteers', 'projects'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        btn.classList.remove('bg-[var(--card)]', 'shadow-xs', 'font-semibold', 'text-[var(--foreground)]');
+        btn.classList.add('text-[var(--muted-foreground)]');
+      });
+
+      // Show selected view & highlight button
+      document.getElementById('view-' + tabId).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-' + tabId);
+      activeBtn.classList.remove('text-[var(--muted-foreground)]');
+      activeBtn.classList.add('bg-[var(--card)]', 'shadow-xs', 'font-semibold', 'text-[var(--foreground)]');
+    }
+  </script>
+</body>
+</html>

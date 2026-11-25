@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civic Tech Saint John - Mobile Intake</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif; }
+  </style>
+</head>
+<body class="bg-[#F5F5F7] text-[#1D1D1F] p-4 antialiased flex flex-col items-center justify-center min-h-screen">
+  
+  <!-- Smartphone Frame (iPhone 15 Pro) -->
+  <div class="w-[390px] bg-white rounded-[50px] border-[12px] border-[#1D1D1F] shadow-2xl p-6 space-y-4 text-xs">
+    
+    <!-- Dynamic Island -->
+    <div class="w-28 h-5 bg-[#1D1D1F] rounded-full mx-auto mb-1"></div>
+
+    <!-- Mobile Header with Official Logo -->
+    <div class="text-center space-y-1">
+      <div class="flex justify-center mb-1">
+        <svg class="h-7 text-[#1D1D1F]" viewBox="0 0 540 100" fill="currentColor">
+          <g transform="translate(10, 10)">
+            <path d="M 40 12 A 32 32 0 1 0 56 12" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+            <line x1="48" y1="4" x2="48" y2="36" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+          </g>
+          <text x="110" y="46" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="600" letter-spacing="1.5">CIVIC TECH SAINT JOHN</text>
+          <text x="112" y="74" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600" letter-spacing="0.5">Technology + Social Good</text>
+        </svg>
+      </div>
+      <h2 class="text-sm font-semibold tracking-tight text-[#1D1D1F]">Volunteer Intake</h2>
+      <p class="text-[11px] text-[#86868B]">Tuesdays 6:30–8:00 PM • Social Enterprise Hub</p>
+    </div>
+
+    <!-- Mobile Fields -->
+    <div class="space-y-3">
+      <div>
+        <label class="block font-medium mb-1">Email Address <span class="text-[#0071E3]">*</span></label>
+        <input type="email" value="jane.doe@example.com" class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <div>
+          <label class="block font-medium mb-1">First Name <span class="text-[#0071E3]">*</span></label>
+          <input type="text" value="Jane" class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Last Name <span class="text-[#0071E3]">*</span></label>
+          <input type="text" value="Doe" class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <div>
+          <label class="block font-medium mb-1">Role <span class="text-xs text-[#86868B] font-normal">(Opt)</span></label>
+          <select class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]">
+            <option>Volunteer</option>
+            <option>Advocate</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-medium mb-1">City <span class="text-xs text-[#86868B] font-normal">(Opt)</span></label>
+          <select class="w-full px-3 py-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]">
+            <option>Saint John, NB</option>
+            <option>Rothesay, NB</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Skills with X Chips -->
+      <div>
+        <div class="flex justify-between items-center mb-1">
+          <label class="font-medium">Skills & Tags <span class="text-xs text-[#86868B] font-normal">(Optional)</span></label>
+          <span class="text-[10px] text-[#0071E3]">Paste bio</span>
+        </div>
+        <div class="flex flex-wrap gap-1 p-1.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl mb-1.5">
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-white border border-[#E5E5EA] text-[11px] rounded-full font-medium">
+            Python <span class="text-[#86868B]">✕</span>
+          </span>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-white border border-[#E5E5EA] text-[11px] rounded-full font-medium">
+            UI/UX <span class="text-[#86868B]">✕</span>
+          </span>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-white border border-[#E5E5EA] text-[11px] rounded-full font-medium">
+            GIS <span class="text-[#86868B]">✕</span>
+          </span>
+        </div>
+        <input type="text" placeholder="Type to add skills..." class="w-full px-3 py-1.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs" />
+      </div>
+
+      <!-- Availability Segmented -->
+      <div>
+        <label class="block font-medium mb-1">Availability</label>
+        <div class="flex justify-between gap-1 text-[11px] mb-1.5">
+          <span class="px-2 py-1 rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Mon</span>
+          <span class="px-2 py-1 rounded-lg bg-[#1D1D1F] text-white font-medium">Tue</span>
+          <span class="px-2 py-1 rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Wed</span>
+          <span class="px-2 py-1 rounded-lg border border-[#E5E5EA] bg-white text-[#86868B]">Thu</span>
+          <span class="px-2 py-1 rounded-lg bg-[#1D1D1F] text-white font-medium">Sat</span>
+        </div>
+        <div class="flex gap-1.5 text-[11px]">
+          <span class="flex-1 text-center py-1 rounded-lg border border-[#E5E5EA] text-[#86868B]">Morning</span>
+          <span class="flex-1 text-center py-1 rounded-lg border border-[#E5E5EA] text-[#86868B]">Afternoon</span>
+          <span class="flex-1 text-center py-1 rounded-lg bg-[#0071E3] text-white font-medium">Evening</span>
+        </div>
+      </div>
+
+      <!-- Consent Checkboxes -->
+      <div class="pt-1 space-y-1.5 text-[10px] text-[#86868B]">
+        <label class="flex items-start gap-2">
+          <input type="checkbox" checked class="mt-0.5 rounded text-[#0071E3]" />
+          <span>I agree to Volunteer Terms & Guidelines *</span>
+        </label>
+        <label class="flex items-start gap-2">
+          <input type="checkbox" checked class="mt-0.5 rounded text-[#0071E3]" />
+          <span>I consent to email notifications (CASL compliant)</span>
+        </label>
+      </div>
+
+      <!-- ANCHORED MOBILE SUBMIT BUTTON AT VERY BOTTOM -->
+      <div class="pt-2">
+        <button type="button" class="w-full py-3 bg-[#0071E3] text-white text-xs font-semibold rounded-xl shadow-sm hover:bg-[#0077ED] transition">
+          Submit Profile
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Home Indicator -->
+    <div class="w-32 h-1 bg-[#1D1D1F]/30 rounded-full mx-auto mt-2"></div>
+  </div>
+</body>
+</html>

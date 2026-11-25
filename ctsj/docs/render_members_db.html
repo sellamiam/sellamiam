@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTSJ - Volunteer Members Database</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+</head>
+<body class="bg-[#F5F5F7] text-[#1D1D1F] p-4 antialiased flex flex-col items-center justify-center min-h-screen">
+  <div class="bg-white rounded-3xl p-6 border border-[#E5E5EA] shadow-sm max-w-5xl w-full space-y-3.5">
+    
+    <!-- Top Header -->
+    <div class="flex items-center justify-between pb-3 border-b border-[#E5E5EA]">
+      <div>
+        <h1 class="text-base font-semibold flex items-center gap-2">
+          <span>👥</span> CTSJ Volunteer Members Database
+        </h1>
+        <p class="text-[11px] text-[#86868B]">48 Active Registered Volunteers • Google Cloud Firestore (Encrypted PII)</p>
+      </div>
+      
+      <!-- Search, Extract & Export Controls -->
+      <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1.5 bg-[#FBFBFD] border border-[#0071E3] rounded-xl px-2.5 py-1 shadow-2xs">
+          <span class="text-xs text-[#86868B]">🔍</span>
+          <input type="text" value="React, GIS" placeholder="Search name or paste text..." class="text-xs bg-transparent text-[#1D1D1F] w-40 focus:outline-none" />
+          <button class="px-2 py-0.5 text-[10px] bg-[#EBF5FF] text-[#0071E3] font-semibold rounded-md border border-[#B9E0FF] hover:bg-blue-100 transition flex items-center gap-1">
+            <span>✨</span> Extract Skills
+          </button>
+        </div>
+        <button class="px-3 py-1.5 text-xs bg-[#0071E3] hover:bg-[#0077ED] text-white font-medium rounded-xl shadow-xs transition flex items-center gap-1.5">
+          <span>✉️</span> Export Mailing List (CASL)
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter & Smart Match Bar -->
+    <div class="flex items-center justify-between gap-2 text-xs bg-[#FBFBFD] p-2 rounded-xl border border-[#E5E5EA]">
+      <div class="flex items-center gap-2">
+        <span class="text-[#86868B] font-medium text-[11px]">Active Filters:</span>
+        <span class="px-2 py-0.5 bg-[#0071E3]/10 text-[#0071E3] border border-[#0071E3]/20 rounded-lg font-medium text-[11px]">Skills: React, GIS ✕</span>
+        <span class="px-2 py-0.5 bg-white border border-[#E5E5EA] rounded-lg text-[11px]">City: Saint John ▾</span>
+        <span class="px-2 py-0.5 bg-white border border-[#E5E5EA] rounded-lg text-[11px]">Availability: Tuesday Evening ▾</span>
+      </div>
+      <div class="flex items-center gap-2 text-[11px] text-[#0071E3]">
+        <span class="cursor-pointer font-medium hover:underline flex items-center gap-1">
+          <span>📋</span> Paste project description to auto-match volunteers
+        </span>
+      </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="overflow-x-auto rounded-2xl border border-[#E5E5EA]">
+      <table class="w-full text-xs text-left">
+        <thead class="bg-[#FBFBFD] text-[#86868B] uppercase text-[10px] tracking-wider border-b border-[#E5E5EA]">
+          <tr>
+            <th class="py-2.5 px-3.5">Member Name</th>
+            <th class="py-2.5 px-3.5">Email</th>
+            <th class="py-2.5 px-3.5">City / Role</th>
+            <th class="py-2.5 px-3.5">Extracted Skills (Tags)</th>
+            <th class="py-2.5 px-3.5">Availability</th>
+            <th class="py-2.5 px-3.5">CASL Status</th>
+            <th class="py-2.5 px-3.5 text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[#E5E5EA]">
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-2.5 px-3.5 font-semibold text-[#1D1D1F]">Alex Chen</td>
+            <td class="py-2.5 px-3.5 font-mono text-[11px] text-[#86868B]">alex.chen@example.com</td>
+            <td class="py-2.5 px-3.5">
+              <div>Saint John, NB</div>
+              <span class="text-[10px] text-[#0071E3] font-medium">Project Lead</span>
+            </td>
+            <td class="py-2.5 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-md font-medium text-[10px]">React</span>
+                <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-md font-medium text-[10px]">GIS Mapping</span>
+                <span class="px-2 py-0.5 bg-purple-50 text-purple-700 border border-purple-200 rounded-md font-medium text-[10px]">UI/UX</span>
+              </div>
+            </td>
+            <td class="py-2.5 px-3.5 text-[#1D1D1F] font-medium">Tue Eve, Sat Aft</td>
+            <td class="py-2.5 px-3.5"><span class="text-emerald-600 font-semibold text-[11px]">✓ Express Opt-In</span></td>
+            <td class="py-2.5 px-3.5 text-right"><button class="text-[#0071E3] font-medium hover:underline">Assign Project</button></td>
+          </tr>
+
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-2.5 px-3.5 font-semibold text-[#1D1D1F]">Jane Doe</td>
+            <td class="py-2.5 px-3.5 font-mono text-[11px] text-[#86868B]">jane.doe@example.com</td>
+            <td class="py-2.5 px-3.5">
+              <div>Saint John, NB</div>
+              <span class="text-[10px] text-slate-600 font-medium">Volunteer</span>
+            </td>
+            <td class="py-2.5 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-md font-medium text-[10px]">Python</span>
+                <span class="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-md font-medium text-[10px]">React</span>
+                <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-md font-medium text-[10px]">Data Cleaning</span>
+              </div>
+            </td>
+            <td class="py-2.5 px-3.5 text-[#1D1D1F] font-medium">Tue Eve (Hack Night)</td>
+            <td class="py-2.5 px-3.5"><span class="text-emerald-600 font-semibold text-[11px]">✓ Express Opt-In</span></td>
+            <td class="py-2.5 px-3.5 text-right"><button class="text-[#0071E3] font-medium hover:underline">Assign Project</button></td>
+          </tr>
+
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-2.5 px-3.5 font-semibold text-[#1D1D1F]">Marcus Bell</td>
+            <td class="py-2.5 px-3.5 font-mono text-[11px] text-[#86868B]">marcus.bell@example.com</td>
+            <td class="py-2.5 px-3.5">
+              <div>Rothesay, NB</div>
+              <span class="text-[10px] text-amber-600 font-medium">Advocate</span>
+            </td>
+            <td class="py-2.5 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded-md font-medium text-[10px]">Facilitation</span>
+                <span class="px-2 py-0.5 bg-purple-50 text-purple-700 border border-purple-200 rounded-md font-medium text-[10px]">Canva</span>
+                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-md font-medium text-[10px]">Policy</span>
+              </div>
+            </td>
+            <td class="py-2.5 px-3.5 text-[#1D1D1F] font-medium">Thu Eve, Sat Morn</td>
+            <td class="py-2.5 px-3.5"><span class="text-emerald-600 font-semibold text-[11px]">✓ Express Opt-In</span></td>
+            <td class="py-2.5 px-3.5 text-right"><button class="text-[#0071E3] font-medium hover:underline">Assign Project</button></td>
+          </tr>
+
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-2.5 px-3.5 font-semibold text-[#1D1D1F]">Sarah Taylor</td>
+            <td class="py-2.5 px-3.5 font-mono text-[11px] text-[#86868B]">sarah.taylor@example.com</td>
+            <td class="py-2.5 px-3.5">
+              <div>Quispamsis, NB</div>
+              <span class="text-[10px] text-emerald-600 font-medium">Ambassador</span>
+            </td>
+            <td class="py-2.5 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-md font-medium text-[10px]">Python</span>
+                <span class="px-2 py-0.5 bg-sky-50 text-sky-700 border border-sky-200 rounded-md font-medium text-[10px]">GTFS Transit</span>
+                <span class="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-md font-medium text-[10px]">Docker</span>
+              </div>
+            </td>
+            <td class="py-2.5 px-3.5 text-[#1D1D1F] font-medium">Tue Eve, Sun Aft</td>
+            <td class="py-2.5 px-3.5"><span class="text-emerald-600 font-semibold text-[11px]">✓ Express Opt-In</span></td>
+            <td class="py-2.5 px-3.5 text-right"><button class="text-[#0071E3] font-medium hover:underline">Assign Project</button></td>
+          </tr>
+
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-2.5 px-3.5 font-semibold text-[#1D1D1F]">Elena Rostova</td>
+            <td class="py-2.5 px-3.5 font-mono text-[11px] text-[#86868B]">elena.r@example.com</td>
+            <td class="py-2.5 px-3.5">
+              <div>Grand Bay-Westfield, NB</div>
+              <span class="text-[10px] text-slate-600 font-medium">Volunteer</span>
+            </td>
+            <td class="py-2.5 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-md font-medium text-[10px]">Data Analytics</span>
+                <span class="px-2 py-0.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-md font-medium text-[10px]">SQL</span>
+                <span class="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-md font-medium text-[10px]">Power BI</span>
+              </div>
+            </td>
+            <td class="py-2.5 px-3.5 text-[#1D1D1F] font-medium">Tue Eve, Sat Morn</td>
+            <td class="py-2.5 px-3.5"><span class="text-emerald-600 font-semibold text-[11px]">✓ Express Opt-In</span></td>
+            <td class="py-2.5 px-3.5 text-right"><button class="text-[#0071E3] font-medium hover:underline">Assign Project</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

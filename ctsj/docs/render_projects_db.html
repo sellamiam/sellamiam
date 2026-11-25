@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTSJ - Projects Database & Sync Hub</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+</head>
+<body class="bg-[#F5F5F7] text-[#1D1D1F] p-6 antialiased flex flex-col items-center justify-center min-h-screen">
+  <div class="bg-white rounded-3xl p-6 border border-[#E5E5EA] shadow-sm max-w-5xl w-full space-y-4">
+    
+    <!-- Sync Status Banner -->
+    <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center justify-between text-xs text-emerald-800">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-semibold">Google Sheets Webhook Sync: ACTIVE</span>
+        <span class="text-[#86868B] text-[11px]">(Spreadsheet: "CTSJ Active Projects")</span>
+      </div>
+      <span class="text-[11px] bg-white border border-emerald-200 px-2 py-0.5 rounded-md font-mono text-emerald-700 font-medium">Last Synced: 2m ago</span>
+    </div>
+
+    <!-- Header -->
+    <div class="flex items-center justify-between pb-3 border-b border-[#E5E5EA]">
+      <div>
+        <h1 class="text-lg font-semibold flex items-center gap-2">
+          <span>📁</span> CTSJ Community Projects Registry
+        </h1>
+        <p class="text-xs text-[#86868B]">Project Leads update Google Sheets → Automatically reflects in Firestore Database</p>
+      </div>
+      <button class="px-3.5 py-1.5 text-xs bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl font-medium text-[#1D1D1F] hover:bg-white shadow-2xs">
+        Open in Google Sheets ↗
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto rounded-2xl border border-[#E5E5EA]">
+      <table class="w-full text-xs text-left">
+        <thead class="bg-[#FBFBFD] text-[#86868B] uppercase text-[10px] tracking-wider border-b border-[#E5E5EA]">
+          <tr>
+            <th class="py-3 px-3.5">Project ID</th>
+            <th class="py-3 px-3.5">Initiative Name</th>
+            <th class="py-3 px-3.5">Status</th>
+            <th class="py-3 px-3.5">Project Lead</th>
+            <th class="py-3 px-3.5">Needed Skills</th>
+            <th class="py-3 px-3.5">Channel / Repo</th>
+            <th class="py-3 px-3.5 text-right">Live Sync</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[#E5E5EA]">
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-3 px-3.5 font-mono text-[11px] text-[#0071E3] font-semibold">PRJ-001</td>
+            <td class="py-3 px-3.5">
+              <div class="font-semibold text-[#1D1D1F]">Saint John Affordable Housing Map</div>
+              <div class="text-[10px] text-[#86868B]">Interactive map of non-profit housing availability in Greater Saint John</div>
+            </td>
+            <td class="py-3 px-3.5">
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full font-semibold text-[10px]">Active</span>
+            </td>
+            <td class="py-3 px-3.5 font-medium">Alex Chen</td>
+            <td class="py-3 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">React</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">GIS Mapping</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">UI/UX</span>
+              </div>
+            </td>
+            <td class="py-3 px-3.5 text-[#86868B]">
+              <div class="font-medium text-[#1D1D1F]">#housing-map</div>
+              <div class="text-[10px] text-[#0071E3]">github.com/ctsj/housing</div>
+            </td>
+            <td class="py-3 px-3.5 text-right font-mono text-[11px] text-emerald-600 font-medium">✓ 19:15:22</td>
+          </tr>
+
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-3 px-3.5 font-mono text-[11px] text-[#0071E3] font-semibold">PRJ-002</td>
+            <td class="py-3 px-3.5">
+              <div class="font-semibold text-[#1D1D1F]">Saint John Transit Route Bot</div>
+              <div class="text-[10px] text-[#86868B]">Real-time SMS & web notifications for Saint John Transit line delays</div>
+            </td>
+            <td class="py-3 px-3.5">
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-full font-semibold text-[10px]">Ideation</span>
+            </td>
+            <td class="py-3 px-3.5 font-medium">Sarah Taylor</td>
+            <td class="py-3 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">Python</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">GTFS Transit</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">Twilio</span>
+              </div>
+            </td>
+            <td class="py-3 px-3.5 text-[#86868B]">
+              <div class="font-medium text-[#1D1D1F]">#transit-bot</div>
+              <div class="text-[10px] text-[#0071E3]">github.com/ctsj/transit</div>
+            </td>
+            <td class="py-3 px-3.5 text-right font-mono text-[11px] text-emerald-600 font-medium">✓ 18:40:11</td>
+          </tr>
+
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-3 px-3.5 font-mono text-[11px] text-[#0071E3] font-semibold">PRJ-003</td>
+            <td class="py-3 px-3.5">
+              <div class="font-semibold text-[#1D1D1F]">Seniors Digital Literacy Toolkit</div>
+              <div class="text-[10px] text-[#86868B]">Step-by-step community guides & one-on-one digital mentoring workshops</div>
+            </td>
+            <td class="py-3 px-3.5">
+              <span class="px-2.5 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full font-semibold text-[10px]">Planning</span>
+            </td>
+            <td class="py-3 px-3.5 font-medium">Marcus Bell</td>
+            <td class="py-3 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">Facilitation</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">Canva</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">Curriculum</span>
+              </div>
+            </td>
+            <td class="py-3 px-3.5 text-[#86868B]">
+              <div class="font-medium text-[#1D1D1F]">#digital-literacy</div>
+              <div class="text-[10px] text-[#86868B]">Google Drive Docs</div>
+            </td>
+            <td class="py-3 px-3.5 text-right font-mono text-[11px] text-emerald-600 font-medium">✓ 17:02:45</td>
+          </tr>
+
+          <tr class="hover:bg-[#FBFBFD]">
+            <td class="py-3 px-3.5 font-mono text-[11px] text-[#0071E3] font-semibold">PRJ-004</td>
+            <td class="py-3 px-3.5">
+              <div class="font-semibold text-[#1D1D1F]">Open Civic Data Catalog</div>
+              <div class="text-[10px] text-[#86868B]">Community repository indexing municipal open datasets and civic APIs</div>
+            </td>
+            <td class="py-3 px-3.5">
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full font-semibold text-[10px]">Active</span>
+            </td>
+            <td class="py-3 px-3.5 font-medium">Jane Doe</td>
+            <td class="py-3 px-3.5">
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">Python</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">BigQuery</span>
+                <span class="px-2 py-0.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded text-[10px]">CKAN</span>
+              </div>
+            </td>
+            <td class="py-3 px-3.5 text-[#86868B]">
+              <div class="font-medium text-[#1D1D1F]">#open-data</div>
+              <div class="text-[10px] text-[#0071E3]">github.com/ctsj/data</div>
+            </td>
+            <td class="py-3 px-3.5 text-right font-mono text-[11px] text-emerald-600 font-medium">✓ 16:30:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

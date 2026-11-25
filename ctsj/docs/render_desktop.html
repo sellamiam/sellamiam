@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civic Tech Saint John - Desktop Intake</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif; }
+  </style>
+</head>
+<body class="bg-[#F5F5F7] text-[#1D1D1F] p-4 antialiased flex flex-col items-center justify-center min-h-screen" style="zoom: 0.82;">
+  
+  <!-- Header with Official CTSJ Logo -->
+  <div class="text-center mb-8">
+    <div class="flex justify-center mb-3">
+      <svg class="h-10 text-[#1D1D1F]" viewBox="0 0 540 100" fill="currentColor">
+        <g transform="translate(10, 10)">
+          <path d="M 40 12 A 32 32 0 1 0 56 12" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+          <line x1="48" y1="4" x2="48" y2="36" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+        </g>
+        <text x="110" y="46" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="600" letter-spacing="1.5" fill="currentColor">CIVIC TECH SAINT JOHN</text>
+        <text x="112" y="74" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600" letter-spacing="0.5" fill="currentColor">Technology + Social Good</text>
+      </svg>
+    </div>
+    <h1 class="text-2xl font-semibold tracking-tight text-[#1D1D1F]">Volunteer & Community Intake</h1>
+    <p class="text-xs text-[#86868B] mt-1">Join weekly Tuesday hack nights and contribute to open civic projects</p>
+  </div>
+
+  <!-- Main Card -->
+  <div class="bg-white rounded-3xl p-8 border border-[#E5E5EA] shadow-sm max-w-4xl w-full space-y-6">
+    
+    <!-- Info banner for existing profile -->
+    <div class="p-3 bg-[#FBFBFD] border border-[#0071E3]/20 rounded-2xl flex items-center gap-3 text-xs">
+      <span class="text-[#0071E3] font-bold text-sm">ℹ</span>
+      <span class="text-[#1D1D1F]">
+        <strong class="font-medium">Returning Member?</strong> Enter your email to automatically load and edit your existing skills and availability.
+      </span>
+    </div>
+
+    <!-- Two-Column Layout -->
+    <div class="grid grid-cols-2 gap-8">
+      
+      <!-- Left Column: Personal Information -->
+      <div class="space-y-4">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-[#86868B]">Personal Details</h2>
+        
+        <div>
+          <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Email Address <span class="text-[#0071E3]">*</span></label>
+          <input type="email" value="alex.chen@example.com" class="w-full px-3.5 py-2.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F] focus:outline-none" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-[#1D1D1F] mb-1">First Name <span class="text-[#0071E3]">*</span></label>
+            <input type="text" value="Alex" class="w-full px-3.5 py-2.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Last Name <span class="text-[#0071E3]">*</span></label>
+            <input type="text" value="Chen" class="w-full px-3.5 py-2.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Phone Number <span class="text-xs text-[#86868B] font-normal">(Optional)</span></label>
+          <input type="tel" value="506-555-0192" class="w-full px-3.5 py-2.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-[#1D1D1F] mb-1">Role <span class="text-xs text-[#86868B] font-normal">(Optional)</span></label>
+            <select class="w-full px-3.5 py-2.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]">
+              <option selected>Volunteer</option>
+              <option>Community Advocate</option>
+              <option>Ambassador</option>
+              <option>Project Lead</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-[#1D1D1F] mb-1">City <span class="text-xs text-[#86868B] font-normal">(Optional)</span></label>
+            <select class="w-full px-3.5 py-2.5 bg-[#FBFBFD] border border-[#E5E5EA] rounded-xl text-xs text-[#1D1D1F]">
+              <option selected>Saint John, NB</option>
+              <option>Rothesay, NB</option>
+              <option>Quispamsis, NB</option>
+              <option>Grand Bay-Westfield, NB</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Skills & Availability -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-[#86868B]">Skills & Experience</h2>
+          <span class="text-xs text-[#0071E3] hover:underline cursor-pointer">Paste bio to extract</span>
+        </div>
+
+        <!-- Selected Skills with X -->
+        <div class="flex flex-wrap gap-1.5 p-2 bg-[#FBFBFD] border border-[#E5E5EA] rounded-2xl min-h-[46px]">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#E5E5EA] text-[#1D1D1F] text-xs font-medium rounded-full shadow-2xs">
+            React <span class="text-[#86868B] hover:text-[#1D1D1F] cursor-pointer">✕</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#E5E5EA] text-[#1D1D1F] text-xs font-medium rounded-full shadow-2xs">
+            Python <span class="text-[#86868B] hover:text-[#1D1D1F] cursor-pointer">✕</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#E5E5EA] text-[#1D1D1F] text-xs font-medium rounded-full shadow-2xs">
+            GIS Mapping <span class="text-[#86868B] hover:text-[#1D1D1F] cursor-pointer">✕</span>
+          </span>
+        </div>
+
+        <!-- Autocomplete Input with Open Floating Dropdown -->
+        <div class="relative">
+          <input type="text" value="UI" class="w-full px-3.5 py-2.5 bg-[#FBFBFD] border border-[#0071E3] rounded-xl text-xs text-[#1D1D1F] focus:outline-none" />
+          <div class="absolute left-0 right-0 mt-1 bg-white border border-[#E5E5EA] rounded-2xl shadow-lg z-20 overflow-hidden divide-y divide-[#F2F2F7]">
+            <div class="px-4 py-2.5 text-xs flex items-center justify-between bg-[#F5F5F7] font-medium text-[#1D1D1F]">
+              <span>UI/UX Design</span>
+              <span class="text-[10px] text-[#86868B] bg-[#E5E5EA] px-1.5 py-0.5 rounded">Design</span>
+            </div>
+            <div class="px-4 py-2.5 text-xs flex items-center justify-between text-[#86868B]">
+              <span>Public Speaking</span>
+              <span class="text-[10px] text-[#86868B] bg-[#E5E5EA] px-1.5 py-0.5 rounded">Community</span>
+            </div>
+            <div class="px-4 py-2.5 text-xs flex items-center justify-between text-[#86868B]">
+              <span>SQL & Databases</span>
+              <span class="text-[10px] text-[#86868B] bg-[#E5E5EA] px-1.5 py-0.5 rounded">Dev</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="pt-2">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-[#86868B] mb-2">Availability</h2>
+          <div class="flex flex-wrap gap-1.5 mb-2.5">
+            <span class="px-3 py-1.5 text-xs rounded-xl border border-[#E5E5EA] bg-white text-[#86868B]">Mon</span>
+            <span class="px-3 py-1.5 text-xs rounded-xl bg-[#1D1D1F] text-white font-medium">Tue</span>
+            <span class="px-3 py-1.5 text-xs rounded-xl border border-[#E5E5EA] bg-white text-[#86868B]">Wed</span>
+            <span class="px-3 py-1.5 text-xs rounded-xl border border-[#E5E5EA] bg-white text-[#86868B]">Thu</span>
+            <span class="px-3 py-1.5 text-xs rounded-xl border border-[#E5E5EA] bg-white text-[#86868B]">Fri</span>
+            <span class="px-3 py-1.5 text-xs rounded-xl bg-[#1D1D1F] text-white font-medium">Sat</span>
+            <span class="px-3 py-1.5 text-xs rounded-xl border border-[#E5E5EA] bg-white text-[#86868B]">Sun</span>
+          </div>
+          <div class="flex gap-2 text-xs">
+            <span class="px-3 py-1.5 rounded-xl border border-[#E5E5EA] bg-white text-[#86868B]">Morning</span>
+            <span class="px-3 py-1.5 rounded-xl border border-[#E5E5EA] bg-white text-[#86868B]">Afternoon</span>
+            <span class="px-3 py-1.5 rounded-xl bg-[#0071E3] text-white font-medium">Evening (Hack Night)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="border-[#F2F2F7]" />
+
+    <!-- BOTTOM SECTION: Consent Checkboxes and Full-Width Bottom-Anchored Submit Button -->
+    <div class="space-y-4 pt-2">
+      <div class="space-y-2 text-xs text-[#86868B]">
+        <label class="flex items-start gap-2.5 cursor-pointer">
+          <input type="checkbox" checked class="mt-0.5 rounded text-[#0071E3]" />
+          <span>I agree to the <strong class="text-[#1D1D1F] underline">Civic Tech Saint John Volunteer Terms & Community Guidelines</strong> *</span>
+        </label>
+        <label class="flex items-start gap-2.5 cursor-pointer">
+          <input type="checkbox" checked class="mt-0.5 rounded text-[#0071E3]" />
+          <span>I expressly consent to receive emails regarding meetup agendas and volunteer calls (CASL compliant, 1-click unsubscribe anytime).</span>
+        </label>
+      </div>
+
+      <!-- Prominent Bottom Button -->
+      <div class="pt-2">
+        <button type="button" class="w-full py-3.5 px-6 bg-[#0071E3] hover:bg-[#0077ED] text-white text-sm font-semibold rounded-2xl shadow-sm transition active:scale-[0.99] flex items-center justify-center gap-2">
+          <span>Submit Profile</span>
+          <span class="text-xs opacity-80">→</span>
+        </button>
+        <p class="text-center text-[11px] text-[#86868B] mt-2">
+          🔒 Your personal data is protected under PIPEDA and never shared with commercial entities.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
